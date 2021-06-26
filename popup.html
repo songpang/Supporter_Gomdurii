@@ -1,17 +1,191 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
   <head>
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="popup.css" />
     <script src="popup.js"></script>
+    <style>
+      @font-face {
+        font-family: "SEBANG_Gothic_Bold";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      body {
+        min-width: 350px;
+        max-width: 100%;
+        min-height: 200px;
+        max-height: 100%;
+        position: relative;
+        vertical-align: middle;
+      }
+
+      .body-header {
+        padding: 5px;
+        font-family: SEBANG_Gothic_Bold;
+        border-bottom: 2px solid #6799ff;
+        border-top: 2px solid #6799ff;
+        text-align: center;
+      }
+
+      .body-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 20px;
+        align-items: center;
+      }
+
+      .item {
+        opacity: 1;
+        transition: opacity 0.2s ease-in-out;
+      }
+
+      .item:hover {
+        opacity: 0.5;
+      }
+
+      .img-item:hover {
+        opacity: 0.5;
+        width: 48px;
+      }
+
+      .img-item2:hover {
+        opacity: 0.5;
+        width: 64px;
+      }
+
+      .img-item3:hover {
+        opacity: 0.5;
+        width: 58px;
+      }
+
+      .img-h {
+        vertical-align: middle;
+        margin: 10px;
+        margin-right: 40px;
+      }
+
+      .text-h {
+        vertical-align: middle;
+        margin: 10px;
+      }
+
+      hr {
+        border: dashed 0.5px #6799ff;
+        width: 95%;
+      }
+
+      button {
+        background: #6799ff;
+        color: #fff;
+        border: none;
+        position: relative;
+        height: 30px;
+        width: 60px;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: 800ms ease all;
+        outline: none;
+        margin: 0px 3px;
+      }
+
+      button:hover {
+        background: #fff;
+        color: #6799ff;
+      }
+
+      button:before,
+      button:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 2px;
+        width: 0;
+        background: #6799ff;
+        transition: 400ms ease all;
+      }
+
+      button:after {
+        right: inherit;
+        top: inherit;
+        left: 0;
+        bottom: 0;
+      }
+
+      button:hover:before,
+      button:hover:after {
+        width: 100%;
+        transition: 800ms ease all;
+      }
+    </style>
   </head>
   <body>
-    <button id="enable" class="hide">Enable</button>
-    <button id="disable">Disable</button>
-    <span id="status" class="hide"></span>
+    <!-- Main Header for KNU Extension -->
+    <div class="body-header">
+      <h1>
+        <img class="img-h" src="images/gomduri.png" width="48" />
+        서포터 곰두리 v. 1.0
+      </h1>
+    </div>
+
+    <!-- Space for redirecting urls -->
+    <div class="body-container">
+      <div class="item">
+        <a href="https://www.kangwon.ac.kr" target="_blank">
+          <img class="img-item3" src="images/KNU_logo.png" width="48" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://kcloud.kangwon.ac.kr/login" target="_blank">
+          <img class="img-item2" src="images/Kcloud_logo.png" width="58" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://mail.kangwon.ac.kr/" target="_blank">
+          <img class="img-item" src="images/mail.png" width="38" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://kangwon.everytime.kr/" target="_blank">
+          <img class="img-item" src="images/everytime.png" width="38" />
+        </a>
+      </div>
+    </div>
     <hr />
-    <button id="config">Settings</button>
-    <hr />
-    <button id="feedback" class="secondary">Send feedback</button>
-    <button id="about" class="secondary">About</button>
+    <div class="body-container">
+      <div class="item">
+        <a href="https://library.kangwon.ac.kr/" target="_blank">
+          <img class="img-item2" src="images/library.png" width="58" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://sw.kangwon.ac.kr/" target="_blank">
+          <img class="img-item2" src="images/KNU_sw.png" width="58" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="http://knudorm.kangwon.ac.kr/" target="_blank">
+          <img class="img-item2" src="images/KNU_dormitory.png" width="58" />
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://certi.kangwon.ac.kr/" target="_blank">
+          <img class="img-item2" src="images/KNU_cert.png" width="58" />
+        </a>
+      </div>
+    </div>
+    <div class="body-header">
+      <span class="text-h">
+        동영상 배속 재생 &nbsp;&nbsp;&nbsp;
+      <button id="enable" class="hide">Enable</button>
+      <button id="disable">Disable</button>
+      <button id="config">Settings</button>
+      <span id="status" class="hide"></span>
+    </span>
+    </div>
   </body>
 </html>
+

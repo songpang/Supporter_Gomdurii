@@ -3,14 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.open(chrome.runtime.getURL("options.html"));
   });
 
-  document.querySelector("#about").addEventListener("click", function () {
-    window.open("https://github.com/igrigorik/videospeed");
-  });
-
-  document.querySelector("#feedback").addEventListener("click", function () {
-    window.open("https://github.com/igrigorik/videospeed/issues");
-  });
-
   document.querySelector("#enable").addEventListener("click", function () {
     toggleEnabled(true, settingsSavedReloadMessage);
   });
@@ -51,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function settingsSavedReloadMessage(enabled) {
     setStatusMessage(
-      `${enabled ? "Enabled" : "Disabled"}. Reload page to see changes`
+      `${enabled ? "Enabled" : "Disabled"}. 새로고침 해주곰`
     );
   }
 
