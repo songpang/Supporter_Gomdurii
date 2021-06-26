@@ -43,13 +43,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function settingsSavedReloadMessage(enabled) {
     setStatusMessage(
-      `${enabled ? "Enabled" : "Disabled"}. 새로고침 해주곰`
+      `${enabled ? "Enabled" : "Disabled"}, 새로고침 해주곰 !`
     );
   }
 
   function setStatusMessage(str) {
     const status_element = document.querySelector("#status");
-    status_element.classList.toggle("hide", false);
+    status_element.classList.toggle("span-h", false);
     status_element.innerText = str;
   }
 });

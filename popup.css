@@ -30,6 +30,14 @@ body {
   align-items: center;
 }
 
+.body-footer {
+  padding: 10px;
+  font-family: SEBANG_Gothic_Bold;
+  border-bottom: 2px solid #6799ff;
+  border-top: 2px solid #6799ff;
+  text-align: center;
+}
+
 .item {
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
@@ -61,8 +69,15 @@ body {
 }
 
 .text-h {
+  font-size: 13px;
   vertical-align: middle;
-  margin: 10px;
+}
+
+.span-h {
+  display: none;
+  font-size: 13px;
+  vertical-align: middle;
+  padding-top: 20px;
 }
 
 hr {
@@ -76,7 +91,7 @@ button {
   border: none;
   position: relative;
   height: 30px;
-  width: 60px;
+  width: 63px;
   font-size: 1.1em;
   cursor: pointer;
   transition: 800ms ease all;
