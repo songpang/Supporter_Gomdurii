@@ -1,10 +1,10 @@
 {
-  "name": "TEST",
+  "name": "서포터 곰두리",
   "short_name": "videospeed",
   "version": "0.6.3",
   "manifest_version": 2,
-  "description": "Speed up, slow down, advance and rewind HTML5 audio/video with shortcuts",
-  "homepage_url": "https://github.com/igrigorik/videospeed",
+  "description": "Supporting redirection to KNU pages easily for KNU students",
+  "homepage_url": "https://github.com/songpang/supportor_gomduri",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
