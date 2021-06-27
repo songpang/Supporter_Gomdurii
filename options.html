@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Video Speed Controller: Options</title>
+    <meta charset="utf-8" />
+    <title> Supportor Gomduri : Options</title>
     <link rel="stylesheet" href="options.css" />
     <script src="options.js"></script>
   </head>
   <body>
     <header>
-      <h1>Video Speed Controller</h1>
+      <h1> SUPPORTER GOMDURI . Settings</h1>
     </header>
 
     <section id="customs">
-      <h3>Shortcuts</h3>
+      <h3>단축키</h3>
       <div class="row customs" id="display">
         <select class="customDo">
-          <option value="display">Show/hide controller</option>
+          <option value="display">컨트롤러 숨기곰</option>
         </select>
         <input
           class="customKey"
@@ -30,7 +31,7 @@
       </div>
       <div class="row customs" id="slower">
         <select class="customDo">
-          <option value="slower">Decrease speed</option>
+          <option value="slower">배속 낮추곰</option>
         </select>
         <input
           class="customKey"
@@ -46,7 +47,7 @@
       </div>
       <div class="row customs" id="faster">
         <select class="customDo">
-          <option value="faster">Increase speed</option>
+          <option value="faster">배속 올리곰</option>
         </select>
         <input
           class="customKey"
@@ -62,7 +63,7 @@
       </div>
       <div class="row customs" id="rewind">
         <select class="customDo">
-          <option value="rewind">Rewind</option>
+          <option value="rewind">뒤로 가곰</option>
         </select>
         <input
           class="customKey"
@@ -78,7 +79,7 @@
       </div>
       <div class="row customs" id="advance">
         <select class="customDo">
-          <option value="advance">Advance</option>
+          <option value="advance">앞으로 가곰</option>
         </select>
         <input
           class="customKey"
@@ -94,7 +95,7 @@
       </div>
       <div class="row customs" id="reset">
         <select class="customDo">
-          <option value="reset">Reset speed</option>
+          <option value="reset">초기화곰</option>
         </select>
         <input
           class="customKey"
@@ -115,7 +116,7 @@
       </div>
       <div class="row customs" id="fast">
         <select class="customDo">
-          <option value="fast">Preferred speed</option>
+          <option value="fast">지정 스피드</option>
         </select>
         <input
           class="customKey"
@@ -130,7 +131,7 @@
         </select>
       </div>
 
-      <button id="add">Add New</button>
+      <!-- <button id="add">Add New</button> -->
     </section>
 
     <section>
@@ -177,49 +178,46 @@
 
     <button id="save">Save</button>
     <button id="restore">Restore Defaults</button>
-    <button id="experimental">Show Experimental Features</button>
+    <!-- <button id="experimental">Show Experimental Features</button> -->
 
     <div id="status"></div>
 
-    <div id="faq">
+    < id="faq">
       <hr />
 
-      <h4>Extension controls not appearing?</h4>
+      <h1>
+        - 서포터 곰두리 프로그램은 비대면 강의의 부정 출석/참관을 위한 도구가 아님을 알립니다! <br/>
+        - 서포터 곰두리의 기능을 사용하여 동영상 강의 수강 시 정상적인 수강 기록이나 진도율이 저장되지 않을 수 있습니다. <br/>
+      </h1>
+      <hr/>
+      <h2>Q. 서포터 곰두리의 제어 컨트롤러가 보이지 않는다곰?</h2>
       <p>
-        This extension is only compatible with HTML5 audio and video. If you
-        don't see the controls showing up, chances are you are viewing a Flash
-        content. If you want to confirm, try right-clicking on the content and
-        inspect the menu: if it mentions flash, then that's the issue. That
-        said, <b>most sites will fallback to HTML5</b> if they detect that Flash
-        is not available. You can try manually disabling Flash plugin in the
-        browser:
+        A. 서포터 곰두리는 오직 HTML5의 오디오와 비디오만을 지원합니다. <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp; 컨트롤러가 보이지 않는다면 Flash 컨텐츠를 시청하고 있을 가능성이 높습니다.
+      </p>
+
+      <h2>Q. 로컬 환경에서의 비디오에서 컨트롤러가 보이지 않는다곰?</h2>
+      <p>
+        A. 로컬 미디어의 재생을 위해서는 (e.g. File &gt; Open File), 추가적인 확장프로그램의 권한을 열어야 합니다.
       </p>
 
       <ul>
+        <li>새 탭에서 <code>chrome://extensions</code>을 입력하세요.</li>
         <li>
-          In a new tab, navigate to <code>chrome://settings/content/flash</code>
+          리스트에서 "서포터 곰두리"를 찾고 "Allow access to file URLs"을 허용하세요.
         </li>
-        <li>Disable "Allow sites to run Flash"</li>
-        <li>Restart your browser and try playing your audio or video again</li>
+        <li>
+          새탭을 열고 로컬 비디오를 드래그하면 컨트롤러가 나타나는지 확인하세요.
+        </li>
       </ul>
-
-      <h4>The speed controls are not showing up for local videos?</h4>
+      <hr/>
+      <h2>
+        본 확장 프로그램, "서포터 곰두리"는 어떠한 기관에서도 관련/보증/연관의 사실이 없음을 밝힙니다. <br/>
+        오로지 학우들의 편의만을 위해서 프로그램이 작성되었음을 알리며 프로그램을 사용했을 경우 발생하는 <br/> 불이익에 대한 모든 책임은 사용자 본인에게 있습니다. 
+      </h2>
       <p>
-        To enable playback of local media (e.g. File &gt; Open File), you need
-        to grant additional permissions to the extension.
+        MIT License
       </p>
-
-      <ul>
-        <li>In a new tab, navigate to <code>chrome://extensions</code></li>
-        <li>
-          Find "Video Speed Controller" extension in the list and enable "Allow
-          access to file URLs"
-        </li>
-        <li>
-          Open a new tab and try opening a local file, the controls should show
-          up
-        </li>
-      </ul>
     </div>
   </body>
 </html>
