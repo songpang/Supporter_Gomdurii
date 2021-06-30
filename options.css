@@ -122,3 +122,13 @@ select {
 h1, h2, h3, h4, p {
   font-family: "SEBANG_Gothic_Bold";
 }
+
+.h1-bigText {
+  font-size: 25px;
+}
+
+.p-bigText {
+  font-size: 15px;
+  display: inline-block;
+  width: 180px;
+}

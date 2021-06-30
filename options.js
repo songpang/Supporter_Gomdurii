@@ -160,22 +160,6 @@ function add_shortcut() {
   );
 }
 
-function createKeyBindings(item) {
-  const action = item.querySelector(".customDo").value;
-  const key = item.querySelector(".customKey").keyCode;
-  const value = Number(item.querySelector(".customValue").value);
-  const force = item.querySelector(".customForce").value;
-  const predefined = !!item.id; //item.id ? true : false;
-
-  keyBindings.push({
-    action: action,
-    key: key,
-    value: value,
-    force: force,
-    predefined: predefined
-  });
-}
-
 // Validates settings before saving
 function validate() {
   var valid = true;
@@ -199,6 +183,24 @@ function validate() {
   return valid;
 }
 
+function createKeyBindings(item) {
+  const action = item.querySelector(".p-bigText").id;
+  const key = item.querySelector(".customKey").keyCode;
+  const value = Number(item.querySelector(".customValue").value);
+  const force = item.querySelector(".customForce").value;
+  const predefined = !!item.id; //item.id ? true : false;
+
+  console.log(action);
+  
+  keyBindings.push({
+    action: action,
+    key: key,
+    value: value,
+    force: force,
+    predefined: predefined
+  });
+}
+
 // Saves options to chrome.storage
 function save_options() {
   if (validate() === false) {
@@ -207,7 +209,9 @@ function save_options() {
   keyBindings = [];
   Array.from(document.querySelectorAll(".customs")).forEach((item) =>
     createKeyBindings(item)
+    // console.log(item)
   ); // Remove added shortcuts
+
 
   var rememberSpeed = document.getElementById("rememberSpeed").checked;
   var forceLastSavedSpeed = document.getElementById("forceLastSavedSpeed").checked;
@@ -300,7 +304,7 @@ function restore_options() {
         // new ones
         add_shortcut();
         const dom = document.querySelector(".customs:last-of-type");
-        dom.querySelector(".customDo").value = item["action"];
+        dom.querySelector(".customKey").id = item["action"];
 
         if (customActionsNoValues.includes(item["action"]))
           dom.querySelector(".customValue").disabled = true;
@@ -329,12 +333,6 @@ function restore_defaults() {
       status.textContent = "";
     }, 1000);
   });
-}
-
-function show_experimental() {
-  document
-    .querySelectorAll(".customForce")
-    .forEach((item) => (item.style.display = "inline-block"));
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -373,6 +371,7 @@ document.addEventListener("DOMContentLoaded", function () {
       event.target.parentNode.remove();
     });
   });
+
   document.addEventListener("change", (event) => {
     eventCaller(event, "customDo", function () {
       if (customActionsNoValues.includes(event.target.value)) {

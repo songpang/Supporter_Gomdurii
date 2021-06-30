@@ -2,21 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title> Supportor Gomduri : Options</title>
+    <title>Supportor Gomduri : Options</title>
     <link rel="stylesheet" href="options.css" />
     <script src="options.js"></script>
   </head>
   <body>
     <header>
-      <h1> SUPPORTER GOMDURI . Settings</h1>
+      <h1 class="h1-bigText">SUPPORTER GOMDURI . Settings</h1>
     </header>
 
     <section id="customs">
-      <h3>단축키</h3>
+      <h2>단축키</h2>
+
       <div class="row customs" id="display">
-        <select class="customDo">
-          <option value="display">컨트롤러 숨기곰</option>
-        </select>
+        <h2 class = "p-bigText" id = "display">컨트롤러 숨기곰</h2>
+
         <input
           class="customKey"
           type="text"
@@ -29,10 +29,10 @@
           <option value="true">Disable website key bindings</option>
         </select>
       </div>
+
       <div class="row customs" id="slower">
-        <select class="customDo">
-          <option value="slower">배속 낮추곰</option>
-        </select>
+        <h2 class = "p-bigText">배속 낮추곰</h2>
+
         <input
           class="customKey"
           type="text"
@@ -46,9 +46,7 @@
         </select>
       </div>
       <div class="row customs" id="faster">
-        <select class="customDo">
-          <option value="faster">배속 올리곰</option>
-        </select>
+        <h2 class = "p-bigText">배속 올리곰</h2>
         <input
           class="customKey"
           type="text"
@@ -62,9 +60,7 @@
         </select>
       </div>
       <div class="row customs" id="rewind">
-        <select class="customDo">
-          <option value="rewind">뒤로 가곰</option>
-        </select>
+        <h2 class = "p-bigText">뒤로 가곰</h2>
         <input
           class="customKey"
           type="text"
@@ -78,9 +74,7 @@
         </select>
       </div>
       <div class="row customs" id="advance">
-        <select class="customDo">
-          <option value="advance">앞으로 가곰</option>
-        </select>
+        <h2 class = "p-bigText">앞으로 가곰</h2>
         <input
           class="customKey"
           type="text"
@@ -94,9 +88,7 @@
         </select>
       </div>
       <div class="row customs" id="reset">
-        <select class="customDo">
-          <option value="reset">초기화곰</option>
-        </select>
+        <h2 class = "p-bigText">초기화곰</h2>
         <input
           class="customKey"
           type="text"
@@ -115,9 +107,7 @@
         </select>
       </div>
       <div class="row customs" id="fast">
-        <select class="customDo">
-          <option value="fast">지정 스피드</option>
-        </select>
+        <h2 class = "p-bigText">지정 속도</h2>
         <input
           class="customKey"
           type="text"
@@ -135,22 +125,27 @@
     </section>
 
     <section>
-      <h3>Other</h3>
+      <h2>기타</h2>
       <div class="row">
-        <label for="enabled">Enable</label>
+        <label for="enabled">활성화</label>
         <input id="enabled" type="checkbox" />
       </div>
       <div class="row">
-        <label for="startHidden">Hide controller by default</label>
+        <label for="startHidden">컨트롤러 숨김을 Default로 설정</label>
         <input id="startHidden" type="checkbox" />
       </div>
       <div class="row">
-        <label for="rememberSpeed">Remember playback speed</label>
+        <label for="rememberSpeed">재생 속도 기억</label>
         <input id="rememberSpeed" type="checkbox" />
       </div>
       <div class="row">
-        <label for="forceLastSavedSpeed">Force last saved speed<br />
-        <em>Useful for video players that override the speeds set by VideoSpeed</em></label>
+        <label for="forceLastSavedSpeed"
+          >Force last saved speed<br />
+          <em
+            >Useful for video players that override the speeds set by
+            VideoSpeed</em
+          ></label
+        >
         <input id="forceLastSavedSpeed" type="checkbox" />
       </div>
       <div class="row">
@@ -158,13 +153,13 @@
         <input id="audioBoolean" type="checkbox" />
       </div>
       <div class="row">
-        <label for="controllerOpacity">Controller opacity</label>
+        <label for="controllerOpacity">컨트롤러 투명도</label>
         <input id="controllerOpacity" type="text" value="" />
       </div>
       <div class="row">
         <label for="blacklist"
-          >Sites on which extension is disabled<br />
-          (one per line)<br />
+          >확장프로그램이 비활성화 <br/>되어야 할 사이트 목록 설정<br />
+          (한줄에 하나)<br />
           <br />
           <em>
             <a href="https://www.regexpal.com/">Regex</a> is supported.<br />
@@ -176,48 +171,54 @@
       </div>
     </section>
 
-    <button id="save">Save</button>
-    <button id="restore">Restore Defaults</button>
-    <!-- <button id="experimental">Show Experimental Features</button> -->
+    <button id="save">저장</button>
+    <button id="restore">기본값 복원</button>
+    <button id="experimental">Show Experimental Features</button>
 
     <div id="status"></div>
 
-    < id="faq">
+    <div id="faq">
       <hr />
 
       <h1>
-        - 서포터 곰두리 프로그램은 비대면 강의의 부정 출석/참관을 위한 도구가 아님을 알립니다! <br/>
-        - 서포터 곰두리의 기능을 사용하여 동영상 강의 수강 시 정상적인 수강 기록이나 진도율이 저장되지 않을 수 있습니다. <br/>
+        - 서포터 곰두리 프로그램은 비대면 강의의 부정 출석/참관을 위한 도구가
+        아님을 알립니다! <br />
+        - 서포터 곰두리의 기능을 사용하여 동영상 강의 수강 시 정상적인 수강
+        기록이나 진도율이 저장되지 않을 수 있습니다. <br />
       </h1>
-      <hr/>
+      <hr />
       <h2>Q. 서포터 곰두리의 제어 컨트롤러가 보이지 않는다곰?</h2>
       <p>
-        A. 서포터 곰두리는 오직 HTML5의 오디오와 비디오만을 지원합니다. <br/>
-        &nbsp;&nbsp;&nbsp;&nbsp; 컨트롤러가 보이지 않는다면 Flash 컨텐츠를 시청하고 있을 가능성이 높습니다.
+        A. 서포터 곰두리는 오직 HTML5의 오디오와 비디오만을 지원합니다. <br />
+        &nbsp;&nbsp;&nbsp;&nbsp; 컨트롤러가 보이지 않는다면 Flash 컨텐츠를
+        시청하고 있을 가능성이 높습니다.
       </p>
 
       <h2>Q. 로컬 환경에서의 비디오에서 컨트롤러가 보이지 않는다곰?</h2>
       <p>
-        A. 로컬 미디어의 재생을 위해서는 (e.g. File &gt; Open File), 추가적인 확장프로그램의 권한을 열어야 합니다.
+        A. 로컬 미디어의 재생을 위해서는 (e.g. File &gt; Open File), 추가적인
+        확장프로그램의 권한을 열어야 합니다.
       </p>
 
       <ul>
         <li>새 탭에서 <code>chrome://extensions</code>을 입력하세요.</li>
         <li>
-          리스트에서 "서포터 곰두리"를 찾고 "Allow access to file URLs"을 허용하세요.
+          리스트에서 "서포터 곰두리"를 찾고 "Allow access to file URLs"을
+          허용하세요.
         </li>
         <li>
           새탭을 열고 로컬 비디오를 드래그하면 컨트롤러가 나타나는지 확인하세요.
         </li>
       </ul>
-      <hr/>
+      <hr />
       <h2>
-        본 확장 프로그램, "서포터 곰두리"는 어떠한 기관에서도 관련/보증/연관의 사실이 없음을 밝힙니다. <br/>
-        오로지 학우들의 편의만을 위해서 프로그램이 작성되었음을 알리며 프로그램을 사용했을 경우 발생하는 <br/> 불이익에 대한 모든 책임은 사용자 본인에게 있습니다. 
+        본 확장 프로그램, "서포터 곰두리"는 어떠한 기관에서도 관련/보증/연관의
+        사실이 없음을 밝힙니다. <br />
+        오로지 학우들의 편의만을 위해서 프로그램이 작성되었음을 알리며
+        프로그램을 사용했을 경우 발생하는 <br />
+        불이익에 대한 모든 책임은 사용자 본인에게 있습니다.
       </h2>
-      <p>
-        MIT License
-      </p>
+      <p>MIT License</p>
     </div>
   </body>
 </html>
