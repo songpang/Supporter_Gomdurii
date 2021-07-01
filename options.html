@@ -15,23 +15,20 @@
       <h2>단축키</h2>
 
       <div class="row customs" id="display">
-        <h2 class = "p-bigText" id = "display">컨트롤러 숨기곰</h2>
+        <h2 class = "p-bigText" for = "display">컨트롤러 숨기곰</h2>
 
         <input
           class="customKey"
+          id = "display"
           type="text"
           value=""
           placeholder="press a key"
         />
         <input class="customValue" type="text" placeholder="value (0.10)" />
-        <select class="customForce">
-          <option value="false">Do not disable website key bindings</option>
-          <option value="true">Disable website key bindings</option>
-        </select>
       </div>
 
       <div class="row customs" id="slower">
-        <h2 class = "p-bigText">배속 낮추곰</h2>
+        <h2 class = "p-bigText" id = "slower">배속 낮추곰</h2>
 
         <input
           class="customKey"
@@ -40,13 +37,9 @@
           placeholder="press a key"
         />
         <input class="customValue" type="text" placeholder="value (0.10)" />
-        <select class="customForce">
-          <option value="false">Do not disable website key bindings</option>
-          <option value="true">Disable website key bindings</option>
-        </select>
       </div>
       <div class="row customs" id="faster">
-        <h2 class = "p-bigText">배속 올리곰</h2>
+        <h2 class = "p-bigText" id = "faster">배속 올리곰</h2>
         <input
           class="customKey"
           type="text"
@@ -54,13 +47,9 @@
           placeholder="press a key"
         />
         <input class="customValue" type="text" placeholder="value (0.10)" />
-        <select class="customForce">
-          <option value="false">Do not disable website key bindings</option>
-          <option value="true">Disable website key bindings</option>
-        </select>
       </div>
       <div class="row customs" id="rewind">
-        <h2 class = "p-bigText">뒤로 가곰</h2>
+        <h2 class = "p-bigText" id = "rewind">뒤로 가곰</h2>
         <input
           class="customKey"
           type="text"
@@ -68,13 +57,9 @@
           placeholder="press a key"
         />
         <input class="customValue" type="text" placeholder="value (10)" />
-        <select class="customForce">
-          <option value="false">Do not disable website key bindings</option>
-          <option value="true">Disable website key bindings</option>
-        </select>
       </div>
       <div class="row customs" id="advance">
-        <h2 class = "p-bigText">앞으로 가곰</h2>
+        <h2 class = "p-bigText" id = "advance">앞으로 가곰</h2>
         <input
           class="customKey"
           type="text"
@@ -82,13 +67,9 @@
           placeholder="press a key"
         />
         <input class="customValue" type="text" placeholder="value (10)" />
-        <select class="customForce">
-          <option value="false">Do not disable website key bindings</option>
-          <option value="true">Disable website key bindings</option>
-        </select>
       </div>
       <div class="row customs" id="reset">
-        <h2 class = "p-bigText">초기화곰</h2>
+        <h2 class = "p-bigText" id = "reset">초기화곰</h2>
         <input
           class="customKey"
           type="text"
@@ -101,13 +82,9 @@
           placeholder="value (1.00)"
           disabled
         />
-        <select class="customForce">
-          <option value="false">Do not disable website key bindings</option>
-          <option value="true">Disable website key bindings</option>
-        </select>
       </div>
       <div class="row customs" id="fast">
-        <h2 class = "p-bigText">지정 속도</h2>
+        <h2 class = "p-bigText" id = "fast">지정 속도</h2>
         <input
           class="customKey"
           type="text"
@@ -115,10 +92,6 @@
           placeholder="press a key"
         />
         <input class="customValue" type="text" placeholder="value (1.80)" />
-        <select class="customForce">
-          <option value="false">Do not disable website key bindings</option>
-          <option value="true">Disable website key bindings</option>
-        </select>
       </div>
 
       <!-- <button id="add">Add New</button> -->
@@ -137,20 +110,6 @@
       <div class="row">
         <label for="rememberSpeed">재생 속도 기억</label>
         <input id="rememberSpeed" type="checkbox" />
-      </div>
-      <div class="row">
-        <label for="forceLastSavedSpeed"
-          >Force last saved speed<br />
-          <em
-            >Useful for video players that override the speeds set by
-            VideoSpeed</em
-          ></label
-        >
-        <input id="forceLastSavedSpeed" type="checkbox" />
-      </div>
-      <div class="row">
-        <label for="audioBoolean">Work on audio</label>
-        <input id="audioBoolean" type="checkbox" />
       </div>
       <div class="row">
         <label for="controllerOpacity">컨트롤러 투명도</label>
@@ -173,7 +132,6 @@
 
     <button id="save">저장</button>
     <button id="restore">기본값 복원</button>
-    <button id="experimental">Show Experimental Features</button>
 
     <div id="status"></div>
 

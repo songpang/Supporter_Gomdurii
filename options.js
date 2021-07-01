@@ -4,9 +4,7 @@ var tcDefaults = {
   speed: 1.0, // default:
   displayKeyCode: 86, // default: V
   rememberSpeed: false, // default: false
-  audioBoolean: false, // default: false
   startHidden: false, // default: false
-  forceLastSavedSpeed: false, //default: false
   enabled: true, // default enabled
   controllerOpacity: 0.3, // default: 0.3
   keyBindings: [
@@ -184,10 +182,10 @@ function validate() {
 }
 
 function createKeyBindings(item) {
-  const action = item.querySelector(".p-bigText").id;
+  const action = item.id;
   const key = item.querySelector(".customKey").keyCode;
   const value = Number(item.querySelector(".customValue").value);
-  const force = item.querySelector(".customForce").value;
+  // const force = item.querySelector(".customForce").value;
   const predefined = !!item.id; //item.id ? true : false;
 
   console.log(action);
@@ -196,7 +194,7 @@ function createKeyBindings(item) {
     action: action,
     key: key,
     value: value,
-    force: force,
+    force: false,
     predefined: predefined
   });
 }
@@ -214,8 +212,6 @@ function save_options() {
 
 
   var rememberSpeed = document.getElementById("rememberSpeed").checked;
-  var forceLastSavedSpeed = document.getElementById("forceLastSavedSpeed").checked;
-  var audioBoolean = document.getElementById("audioBoolean").checked;
   var enabled = document.getElementById("enabled").checked;
   var startHidden = document.getElementById("startHidden").checked;
   var controllerOpacity = document.getElementById("controllerOpacity").value;
@@ -237,8 +233,6 @@ function save_options() {
   chrome.storage.sync.set(
     {
       rememberSpeed: rememberSpeed,
-      forceLastSavedSpeed: forceLastSavedSpeed,
-      audioBoolean: audioBoolean,
       enabled: enabled,
       startHidden: startHidden,
       controllerOpacity: controllerOpacity,
@@ -260,8 +254,6 @@ function save_options() {
 function restore_options() {
   chrome.storage.sync.get(tcDefaults, function (storage) {
     document.getElementById("rememberSpeed").checked = storage.rememberSpeed;
-    document.getElementById("forceLastSavedSpeed").checked = storage.forceLastSavedSpeed;
-    document.getElementById("audioBoolean").checked = storage.audioBoolean;
     document.getElementById("enabled").checked = storage.enabled;
     document.getElementById("startHidden").checked = storage.startHidden;
     document.getElementById("controllerOpacity").value =
@@ -298,8 +290,8 @@ function restore_options() {
         );
         document.querySelector("#" + item["action"] + " .customValue").value =
           item["value"];
-        document.querySelector("#" + item["action"] + " .customForce").value =
-          item["force"];
+        // document.querySelector("#" + item["action"] + " .customForce").value =
+        //   item["force"];
       } else {
         // new ones
         add_shortcut();
@@ -314,7 +306,7 @@ function restore_options() {
           item["key"]
         );
         dom.querySelector(".customValue").value = item["value"];
-        dom.querySelector(".customForce").value = item["force"];
+        // dom.querySelector(".customForce").value = item["force"];
       }
     }
   });
@@ -339,13 +331,13 @@ document.addEventListener("DOMContentLoaded", function () {
   restore_options();
 
   document.getElementById("save").addEventListener("click", save_options);
-  document.getElementById("add").addEventListener("click", add_shortcut);
+  // document.getElementById("add").addEventListener("click", add_shortcut);
   document
     .getElementById("restore")
     .addEventListener("click", restore_defaults);
-  document
-    .getElementById("experimental")
-    .addEventListener("click", show_experimental);
+  // document
+  //   .getElementById("experimental")
+  //   .addEventListener("click", show_experimental);
 
   function eventCaller(event, className, funcName) {
     if (!event.target.classList.contains(className)) {
