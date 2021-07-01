@@ -127,37 +127,6 @@ function updateCustomShortcutInputText(inputItem, keyCode) {
 // List of custom actions for which customValue should be disabled
 var customActionsNoValues = ["pause", "muted", "mark", "jump", "display"];
 
-function add_shortcut() {
-  var html = `<select class="customDo">
-    <option value="slower">Decrease speed</option>
-    <option value="faster">Increase speed</option>
-    <option value="rewind">Rewind</option>
-    <option value="advance">Advance</option>
-    <option value="reset">Reset speed</option>
-    <option value="fast">Preferred speed</option>
-    <option value="muted">Mute</option>
-    <option value="pause">Pause</option>
-    <option value="mark">Set marker</option>
-    <option value="jump">Jump to marker</option>
-    <option value="display">Show/hide controller</option>
-    </select>
-    <input class="customKey" type="text" placeholder="press a key"/>
-    <input class="customValue" type="text" placeholder="value (0.10)"/>
-    <select class="customForce">
-    <option value="false">Do not disable website key bindings</option>
-    <option value="true">Disable website key bindings</option>
-    </select>
-    <button class="removeParent">X</button>`;
-  var div = document.createElement("div");
-  div.setAttribute("class", "row customs");
-  div.innerHTML = html;
-  var customs_element = document.getElementById("customs");
-  customs_element.insertBefore(
-    div,
-    customs_element.children[customs_element.childElementCount - 1]
-  );
-}
-
 // Validates settings before saving
 function validate() {
   var valid = true;
@@ -185,16 +154,12 @@ function createKeyBindings(item) {
   const action = item.id;
   const key = item.querySelector(".customKey").keyCode;
   const value = Number(item.querySelector(".customValue").value);
-  // const force = item.querySelector(".customForce").value;
   const predefined = !!item.id; //item.id ? true : false;
 
-  console.log(action);
-  
   keyBindings.push({
     action: action,
     key: key,
     value: value,
-    force: false,
     predefined: predefined
   });
 }
@@ -207,7 +172,6 @@ function save_options() {
   keyBindings = [];
   Array.from(document.querySelectorAll(".customs")).forEach((item) =>
     createKeyBindings(item)
-    // console.log(item)
   ); // Remove added shortcuts
 
 
@@ -242,7 +206,7 @@ function save_options() {
     function () {
       // Update status to let user know options were saved.
       var status = document.getElementById("status");
-      status.textContent = "Options saved";
+      status.textContent = "저장 했곰!";
       setTimeout(function () {
         status.textContent = "";
       }, 1000);
@@ -265,7 +229,6 @@ function restore_options() {
       storage.keyBindings.push({
         action: "display",
         value: 0,
-        force: false,
         predefined: true
       });
     }
@@ -290,23 +253,7 @@ function restore_options() {
         );
         document.querySelector("#" + item["action"] + " .customValue").value =
           item["value"];
-        // document.querySelector("#" + item["action"] + " .customForce").value =
-        //   item["force"];
-      } else {
-        // new ones
-        add_shortcut();
-        const dom = document.querySelector(".customs:last-of-type");
-        dom.querySelector(".customKey").id = item["action"];
 
-        if (customActionsNoValues.includes(item["action"]))
-          dom.querySelector(".customValue").disabled = true;
-
-        updateCustomShortcutInputText(
-          dom.querySelector(".customKey"),
-          item["key"]
-        );
-        dom.querySelector(".customValue").value = item["value"];
-        // dom.querySelector(".customForce").value = item["force"];
       }
     }
   });
@@ -315,12 +262,9 @@ function restore_options() {
 function restore_defaults() {
   chrome.storage.sync.set(tcDefaults, function () {
     restore_options();
-    document
-      .querySelectorAll(".removeParent")
-      .forEach((button) => button.click()); // Remove added shortcuts
     // Update status to let user know options were saved.
     var status = document.getElementById("status");
-    status.textContent = "Default options restored";
+    status.textContent = "복원 됐곰!";
     setTimeout(function () {
       status.textContent = "";
     }, 1000);
@@ -331,13 +275,9 @@ document.addEventListener("DOMContentLoaded", function () {
   restore_options();
 
   document.getElementById("save").addEventListener("click", save_options);
-  // document.getElementById("add").addEventListener("click", add_shortcut);
   document
     .getElementById("restore")
     .addEventListener("click", restore_defaults);
-  // document
-  //   .getElementById("experimental")
-  //   .addEventListener("click", show_experimental);
 
   function eventCaller(event, className, funcName) {
     if (!event.target.classList.contains(className)) {

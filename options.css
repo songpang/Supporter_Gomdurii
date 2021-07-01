@@ -119,7 +119,7 @@ select {
   text-shadow: 0 0 0 #000000;
 }
 
-h1, h2, h3, h4, p, label {
+h1, h2, h3, h4, p, label, li {
   font-family: "SEBANG_Gothic_Bold";
 }
 
