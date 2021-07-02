@@ -13,4 +13,4 @@ This extension supports redirection to KNU major sites whilst controlling video 
 ### License
 - MIT License
 - Copyright (c) 2014 Ilya Grigorik [(videospeed)](https://github.com/igrigorik/videospeed)
-- Copyright (c) 2021 songpang (supportor gomduri)
+- Copyright (c) 2021 songpang (supporter gomduri)
