@@ -1,10 +1,9 @@
 {
   "name": "서포터 곰두리",
   "short_name": "SP GOMDURI",
-  "version": "0.6.3",
+  "version": "1.0.0",
   "manifest_version": 2,
   "description": "Supporting redirection to KNU pages easily for KNU students",
-  "homepage_url": "https://github.com/songpang/supportor_gomduri",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
