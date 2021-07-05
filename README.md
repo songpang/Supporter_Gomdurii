@@ -6,6 +6,8 @@
 It's a chrome extension for students who belong to KNU(Kangwon National University).<br/>
 This extension supports redirection to KNU major sites whilst controlling video speed when playing online videos.
 
+웨일 스토어 다운로드 링크 : [[Link]](https://store.whale.naver.com/detail/hkmpkohddbhdlflhddffjkggbadbiajd?hl=ko) <br/>
+크롬 스토어 다운로드 링크 : 심사중 <br/><br/>
 ![gomduri](https://user-images.githubusercontent.com/39265399/124255128-cc8df500-db64-11eb-8fe1-87fba080e61f.JPG)
 
 ![gomduri2](https://user-images.githubusercontent.com/39265399/124255131-cd268b80-db64-11eb-9888-b77ca3679673.jpg)
